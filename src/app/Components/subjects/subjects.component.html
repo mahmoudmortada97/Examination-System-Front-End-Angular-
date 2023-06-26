@@ -1,0 +1,16 @@
+<div class="subject pb-5">
+  <h1 class="text-center py-5">Our Subjects</h1>
+
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let subject of subjects" class="col-md-3">
+        <div
+          class="d-flex fs-1 justify-content-center align-items-center subject-container bg-black text-white"
+        >
+          {{ subject }}
+        </div>
+        <h4 class="text-center">{{ subject }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

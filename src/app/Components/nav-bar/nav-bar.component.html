@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand me-5" [routerLink]="'/home'">Exam System </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            role="button"
+            [routerLink]="'/home'"
+            aria-current="page"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" role="button" [routerLink]="'/aboutus'" href="#"
+            >About Us</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" role="button" [routerLink]="'/contact'" href="#"
+            >Contact Us</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/takeexams'" role="button"
+            >Take Exam</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/exams'" role="button">Exams</a>
+        </li>
+      </ul>
+      <ul class="ms-auto navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" role="button">Username</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/login'" role="button">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" role="button">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
