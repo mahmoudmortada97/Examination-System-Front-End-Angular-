@@ -14,6 +14,8 @@ import { LoginComponent } from './Components/login/login.component';
 import { ExamsComponent } from './Components/exams/exams.component';
 import { TakeExamsComponent } from './Components/take-exams/take-exams.component';
 import { FormsModule } from '@angular/forms';
+import { ShowExamsComponent } from './Components/show-exams/show-exams.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,8 +30,9 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     ExamsComponent,
     TakeExamsComponent,
+    ShowExamsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

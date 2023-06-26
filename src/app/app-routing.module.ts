@@ -6,6 +6,7 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ExamsComponent } from './Components/exams/exams.component';
 import { TakeExamsComponent } from './Components/take-exams/take-exams.component';
+import { ShowExamsComponent } from './Components/show-exams/show-exams.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +19,11 @@ const routes: Routes = [
     path: 'takeexams',
     component: TakeExamsComponent,
     title: 'Exam | Take Exam',
+  },
+  {
+    path: 'showexams',
+    component: ShowExamsComponent,
+    title: 'Exam | Show Exams',
   },
 ];
 
