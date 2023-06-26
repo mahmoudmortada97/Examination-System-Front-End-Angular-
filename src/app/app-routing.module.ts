@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, title: 'Exam | Login' },
   { path: 'exams', component: ExamsComponent, title: 'Exam | Exams' },
   {
-    path: 'takeexams',
+    path: 'takeexams/:id',
     component: TakeExamsComponent,
     title: 'Exam | Take Exam',
   },

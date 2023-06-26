@@ -1,28 +1,85 @@
 <div class="min-vh-100">
+  <div></div>
   <div class="container my-4">
-    <h1 class="subject-name display-4 text-center">Geograhy</h1>
+    <button
+      [routerLink]="'/showexams'"
+      class="btn btn-warning text-secondary my-3"
+    >
+      Exit From Exam
+    </button>
+
+    <h1 class="subject-name display-4 text-center">
+      {{ currentQuestion.examName }}
+    </h1>
 
     <div class="question-section my-5">
       <div class="d-flex justify-content-between">
         <h3 class="question fs-1">{{ currentQuestion.title }}</h3>
         <button class="btn btn-success">
-          {{ currentIndex + 1 }} OF {{ Exams[0].questions.length }} Questions
+          {{ currentIndex + 1 }} OF {{ Exams.length }} Questions
         </button>
       </div>
-      <div
-        *ngFor="let choice of currentQuestion.choices"
-        class="d-flex align-items-center"
-      >
+      <div class="d-flex align-items-center">
         <input
           type="radio"
-          [value]="choice"
-          id="choice_{{ choice }}"
+          [value]="currentQuestion.choice1"
+          id="choice_{{ currentQuestion.choice1 }}"
           name="choice"
           [(ngModel)]="selectedChoice"
         />
-        <label class="mx-3 fs-4 abs" for="choice_{{ choice }}" role="button">{{
-          choice
-        }}</label>
+        <label
+          class="mx-3 fs-4 abs"
+          for="choice_{{ currentQuestion.choice1 }}"
+          role="button"
+          >{{ currentQuestion.choice1 }}</label
+        >
+      </div>
+      <div class="d-flex align-items-center">
+        <input
+          type="radio"
+          [value]="currentQuestion.choice2"
+          id="choice_{{ currentQuestion.choice2 }}"
+          name="choice"
+          [(ngModel)]="selectedChoice"
+        />
+        <label
+          class="mx-3 fs-4 abs"
+          for="choice_{{ currentQuestion.choice2 }}"
+          role="button"
+          >{{ currentQuestion.choice2 }}</label
+        >
+      </div>
+
+      <div class="d-flex align-items-center">
+        <input
+          type="radio"
+          [value]="currentQuestion.choice3"
+          id="choice_{{ currentQuestion.choice3 }}"
+          name="choice"
+          [(ngModel)]="selectedChoice"
+        />
+        <label
+          class="mx-3 fs-4 abs"
+          for="choice_{{ currentQuestion.choice3 }}"
+          role="button"
+          >{{ currentQuestion.choice3 }}</label
+        >
+      </div>
+
+      <div class="d-flex align-items-center">
+        <input
+          type="radio"
+          [value]="currentQuestion.choice4"
+          id="choice_{{ currentQuestion.choice4 }}"
+          name="choice"
+          [(ngModel)]="selectedChoice"
+        />
+        <label
+          class="mx-3 fs-4 abs"
+          for="choice_{{ currentQuestion.choice4 }}"
+          role="button"
+          >{{ currentQuestion.choice4 }}</label
+        >
       </div>
     </div>
 
@@ -36,7 +93,7 @@
         Previous
       </button> -->
 
-      <ng-container [ngSwitch]="currentIndex == Exams[0].questions.length - 1">
+      <ng-container [ngSwitch]="currentIndex == Exams.length - 1">
         <button
           *ngSwitchCase="false"
           (click)="nextQuestion(selectedChoice)"

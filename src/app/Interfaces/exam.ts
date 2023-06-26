@@ -1,6 +1,8 @@
 export interface Exam {
   id: number;
   name: string;
+  image: string;
+  description: string;
   questions: Question[];
 }
 

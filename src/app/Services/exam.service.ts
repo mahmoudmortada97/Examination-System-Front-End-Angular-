@@ -11,4 +11,7 @@ export class ExamService {
   getExams() {
     return this.httpClient.get(this.baseUrl + 'Exam');
   }
+  getExamById(id: number) {
+    return this.httpClient.get(`${this.baseUrl}Exam/${id}`);
+  }
 }

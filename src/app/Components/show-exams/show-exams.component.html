@@ -1,81 +1,30 @@
 <div class="container">
   <h1 class="alert alert-primary display-4 text-center my-5">ALL Exams</h1>
   <div class="row">
-    <div class="col-md-4" role="button">
+    <div *ngFor="let exam of Exams" class="col-md-4" role="button">
       <div class="card mb-3" style="max-width: 540px">
         <div class="row g-0">
           <div class="col-md-4">
             <img
-              src="./assets/Images/gepgraphy.jpg"
+              src="./assets/Images/{{ exam.image }}"
               class="img-fluid rounded-start"
               alt="..."
             />
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title text-center fw-bolder fs-3">Geograhy</h5>
+              <h5 class="card-title text-center fw-bolder fs-3">
+                {{ exam.name }}
+              </h5>
               <p class="card-text">
-                The geography exam assesses your knowledge of various
-                geographical concepts and methods.
+                {{ exam.description }}
               </p>
               <p class="card-text alert alert-danger fs-5 text-center">
                 <small class="text-body-secondary">Grade</small>
               </p>
-              <a class="btn btn-success" [routerLink]="['/takeexams']">
+              <a class="btn btn-success" [routerLink]="['/takeexams', exam.id]">
                 Take Exam
               </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4" role="button">
-      <div class="card mb-3" style="max-width: 540px">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img
-              src="./assets/Images/math.jpg"
-              class="img-fluid rounded-start"
-              alt="..."
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title text-center fw-bolder fs-3">Math</h5>
-              <p class="card-text">
-                The math exam evaluates your understanding and application of
-                fundamental mathematical concepts.
-              </p>
-              <p class="card-text alert alert-danger fs-5 text-center">
-                <small class="text-body-secondary">Grade</small>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4" role="button">
-      <div class="card mb-3" style="max-width: 540px">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img
-              src="./assets/Images/history.jpg"
-              class="img-fluid rounded-start"
-              alt="..."
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title text-center fw-bolder fs-3">History</h5>
-              <p class="card-text">
-                The history exam tests your knowledge of past events,
-                significant historical figures, and their impact on societies.
-              </p>
-              <p class="card-text alert alert-danger fs-5 text-center">
-                <small class="text-body-secondary">Grade</small>
-              </p>
             </div>
           </div>
         </div>

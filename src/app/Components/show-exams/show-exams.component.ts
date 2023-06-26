@@ -1,6 +1,7 @@
 import { ExamService } from './../../Services/exam.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Exam } from 'src/app/Interfaces/exam';
 
 @Component({
   selector: 'app-show-exams',
@@ -8,12 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./show-exams.component.css'],
 })
 export class ShowExamsComponent implements OnInit {
-  Exams: any[] = [];
+  Exams: any = [];
   constructor(private router: Router, private examService: ExamService) {}
   ngOnInit(): void {
     this.examService.getExams().subscribe({
       next: (data) => {
-        console.log(data);
+        this.Exams = data;
       },
     });
   }
