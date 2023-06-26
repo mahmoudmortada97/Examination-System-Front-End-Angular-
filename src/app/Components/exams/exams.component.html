@@ -1,1 +1,60 @@
-<p>exams works!</p>
+<div class="min-vh-100">
+  <div class="container my-4">
+    <h1 class="subject-name display-4 text-center">Geograhy</h1>
+
+    <div class="question-section my-5">
+      <div class="d-flex justify-content-between">
+        <h3 class="question fs-1">{{ currentQuestion.title }}</h3>
+        <button class="btn btn-success">
+          {{ currentIndex + 1 }} OF {{ Exams[0].questions.length }} Questions
+        </button>
+      </div>
+      <div
+        *ngFor="let choice of currentQuestion.choices"
+        class="d-flex align-items-center"
+      >
+        <input
+          type="radio"
+          [value]="choice"
+          id="choice_{{ choice }}"
+          name="choice"
+          [(ngModel)]="selectedChoice"
+        />
+        <label class="mx-3 fs-4 abs" for="choice_{{ choice }}" role="button">{{
+          choice
+        }}</label>
+      </div>
+    </div>
+
+    <!--Remove Previous Buttton -->
+    <div class="d-flex justify-content-end">
+      <!--  <button
+        [disabled]="currentIndex === 0"
+        (click)="previousQuestion()"
+        class="btn p-2 btn-outline-secondary"
+      >
+        Previous
+      </button> -->
+
+      <ng-container [ngSwitch]="currentIndex == Exams[0].questions.length - 1">
+        <button
+          *ngSwitchCase="false"
+          (click)="nextQuestion(selectedChoice)"
+          class="btn p-3 btn-outline-primary"
+        >
+          Next
+        </button>
+        <button
+          *ngSwitchCase="true"
+          (click)="submitExam(selectedChoice)"
+          class="btn p-3 btn-danger"
+        >
+          Submit
+        </button>
+      </ng-container>
+    </div>
+    <p *ngIf="Error == true" class="alert alert-danger w-25 text-center">
+      Please Choose Answer
+    </p>
+  </div>
+</div>

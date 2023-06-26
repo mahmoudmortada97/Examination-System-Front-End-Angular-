@@ -13,6 +13,7 @@ import { SubjectsComponent } from './Components/subjects/subjects.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ExamsComponent } from './Components/exams/exams.component';
 import { TakeExamsComponent } from './Components/take-exams/take-exams.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,10 @@ import { TakeExamsComponent } from './Components/take-exams/take-exams.component
     SubjectsComponent,
     LoginComponent,
     ExamsComponent,
-    TakeExamsComponent
+    TakeExamsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
