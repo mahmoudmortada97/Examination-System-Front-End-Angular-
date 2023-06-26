@@ -259,3 +259,7 @@ a:hover {
   background-color: #7e0cf5;
   opacity: 0.2;
 }
+
+img {
+  width: 520px;
+}

@@ -1,1 +1,179 @@
-<p>contact works!</p>
+<!-- Message -->
+<section
+  id="Contact"
+  class="Contact-page position-relative bg-image"
+  style="
+    background-image: url(assets/Images/contact.jpg);
+    background-size: cover;
+  "
+>
+  <div class="overlay-blue"></div>
+  <div class="container pb-3">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="contact-container">
+          <div class="box-shadow-full">
+            <div class="row contact-row px-4">
+              <div class="title-box text-center">
+                <h3 class="title-a">Send a message!</h3>
+                <p class="subtitle-a mb-3">
+                  Reach Out to Us for Support and Assistance.
+                </p>
+                <div class="line-mf mb-2"></div>
+              </div>
+              <div class="col-md-12 mt-2">
+                <form class="contact-form">
+                  <div class="row justify-content-start align-items-center">
+                    <div class="col-md-6 mb-3">
+                      <label for="fname" class="form-label fw-bold mt-2"
+                        >Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="fname"
+                        placeholder="Your Name"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <div class="">
+                        <label for="email" class="form-label fw-bold mt-2"
+                          >Email Address</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          name="email"
+                          placeholder="name@example.com"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <label for="pass" class="form-label fw-bold mt-2"
+                          >Password</label
+                        >
+                        <input
+                          type="password"
+                          id="pass"
+                          class="form-control"
+                          placeholder="Password ..."
+                          name="password"
+                          aria-describedby="passwordHelpBlock"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <label for="subject" class="form-label fw-bold mt-2"
+                          >Subject</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="subject"
+                          id="subject"
+                          placeholder="Subject"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="message" class="form-label fw-bold mt-2"
+                          >Message</label
+                        >
+                        <textarea
+                          class="form-control"
+                          name="message"
+                          id="message"
+                          rows="5"
+                          placeholder="Message"
+                          required=""
+                        ></textarea>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 text-center mt-4">
+                      <button
+                        type="submit"
+                        id="submitBtn"
+                        class="btn btn-primary mb-4"
+                      >
+                        Send Message
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact us -->
+<!-- <section id="contactus" class="services-page bg-light pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-box text-center">
+                        <h3 class="title-a">Contact us</h3>
+                        <p class="text-center"> Thank you for your interest in Techtopia! <br /> If you have any questions or comments, please feel free to contact us using the information below. </p>
+                        <div class="line-mf mb-4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="service-box">
+                        <div class="service-ico"> <span class="ico-circle"><i class="fa-solid fa-phone"></i></span> </div>
+                        <div class="service-content text-center">
+                            <h2 class="s-title fw-bolder">Phone</h2>
+                            <p class="s-description text-center"> You can reach us by phone at <a href="tel:0222615635" class="s-description fw-bold"><i class="mx-2 fa-solid fa-phone"></i> 02 22615635.</a> <br /> Our phone line is open Everyday, from 9am to 11pm. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service-box">
+                        <div class="service-ico"> <span class="ico-circle"><i class="fa-solid fa-envelope"></i></span> </div>
+                        <div class="service-content text-center">
+                            <h2 class="s-title fw-bolder">Email</h2>
+                            <p class="s-description text-center"> You can send us a message via email at <a href="mailto:Techtopia.egypt@gmail.com" class="s-description fw-bold"><i class="mx-2 fa-solid fa-envelope"></i>Techtopia.egypt@gmail.com</a> <br /> We aim to respond to all emails within 24 hours. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service-box">
+                        <div class="service-ico"> <span class="ico-circle"><i class="fa-solid fa-location-dot"></i></span> </div>
+                        <div class="service-content text-center">
+                            <h2 class="s-title fw-bolder">Address</h2>
+                            <p class="s-description text-center"> Our main store is located at<i class="mx-2 fa-solid fa-location-dot"></i>28 Ibn Kotibia St., Abbas El Akkad Nasr City. <br /> If you prefer to visit us in person, please click on <a href="https://goo.gl/maps/xozriD1V6wHmfjjm9" class="s-description fw-bold" target="_blank"><i class="mx-2 fa-solid fa-map-location-dot"></i> Map for directions.</a> <br /> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service-box">
+                        <div class="service-ico"> <span class="ico-circle"><i class="fa-solid fa-users"></i></span> </div>
+                        <div class="service-content text-center">
+                            <h2 class="s-title fw-bolder">Social media</h2>
+                            <p class="s-description text-center"> You can also connect with us on social media: <a href="https://facebook.com" class="s-description fw-bold" target="_blank"><i class="mx-2 fa-brands fa-facebook"></i></a> <a href="https://twitter.com" class="s-description fw-bold" target="_blank"><i class="fa-brands fa-twitter"></i></a> <a href="https://google.com" class="s-description fw-bold" target="_blank"><i class="mx-2 fa-brands fa-google"></i></a><br /> Follow us on social media platforms here for the latest news and updates. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center mb-3">
+                    <p class="s-description fs-4"> We value your feedback and are committed to providing you with the best possible service. <br /> If you have any suggestions or comments on how we can improve our services, please let us know. <br /> Thank you for choosing Techtopia! <i class="ms-1 fa-solid fa-heart text-primary"></i> </p>
+                </div>
+            </div>
+        </div>
+    </section>  -->

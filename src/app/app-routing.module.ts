@@ -7,6 +7,8 @@ import { LoginComponent } from './Components/login/login.component';
 import { ExamsComponent } from './Components/exams/exams.component';
 import { TakeExamsComponent } from './Components/take-exams/take-exams.component';
 import { ShowExamsComponent } from './Components/show-exams/show-exams.component';
+import { RegisterComponent } from './Components/register/register.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent, title: 'Exam | Contact Us' },
   { path: 'aboutus', component: AboutUsComponent, title: 'Exam | About Us' },
   { path: 'login', component: LoginComponent, title: 'Exam | Login' },
+  { path: 'register', component: RegisterComponent, title: 'Exam | Register' },
   { path: 'exams', component: ExamsComponent, title: 'Exam | Exams' },
   {
     path: 'takeexams/:id',
@@ -24,6 +27,11 @@ const routes: Routes = [
     path: 'showexams',
     component: ShowExamsComponent,
     title: 'Exam | Show Exams',
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
+    title: 'Exam | Not Found',
   },
 ];
 

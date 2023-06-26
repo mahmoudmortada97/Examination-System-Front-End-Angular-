@@ -16,6 +16,8 @@ import { TakeExamsComponent } from './Components/take-exams/take-exams.component
 import { FormsModule } from '@angular/forms';
 import { ShowExamsComponent } from './Components/show-exams/show-exams.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './Components/register/register.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     ExamsComponent,
     TakeExamsComponent,
     ShowExamsComponent,
+    RegisterComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
