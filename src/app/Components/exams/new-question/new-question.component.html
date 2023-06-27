@@ -1,0 +1,176 @@
+<div class="container p-5 mb-5">
+  <div class="mb-5">
+    <h1>Add Question</h1>
+    <h4 class="text-secondary">Please fill all data</h4>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <form [formGroup]="qustForm" (submit)="formHandler($event)">
+        <input hidden type="text" name="examId" formControlName="examId" />
+        <div class="mb-3 w-75">
+          <label class="form-label text-secondary">Question title</label>
+          <input
+            class="form-control"
+            type="text"
+            name="Title"
+            placeholder="Please enter question title"
+            formControlName="title"
+          />
+          <ng-container *ngIf="getTitle.touched">
+            <span *ngIf="getTitle.hasError('required')" class="text-danger"
+              >Question title is requierd</span
+            >
+            <span *ngIf="getTitle.hasError('minlength')" class="text-danger"
+              >Question title must be more than 8 characters</span
+            >
+          </ng-container>
+        </div>
+
+        <div class="mb-3 w-50">
+          <label class="form-label text-secondary">Choice 1</label>
+          <input
+            class="form-control"
+            type="text"
+            name="Choice1"
+            placeholder="Please enter Choice 1"
+            formControlName="choice1"
+          />
+          <ng-container *ngIf="getChoice1.touched">
+            <span *ngIf="getChoice1.hasError('required')" class="text-danger"
+              >Choice 1 is requierd</span
+            >
+          </ng-container>
+        </div>
+
+        <div class="mb-3 w-50">
+          <label class="form-label text-secondary">Choice 2</label>
+          <input
+            class="form-control"
+            type="text"
+            name="Choice2"
+            placeholder="Please enter Choice 2"
+            formControlName="choice2"
+          />
+          <ng-container *ngIf="getChoice2.touched">
+            <span *ngIf="getChoice2.hasError('required')" class="text-danger"
+              >Choice 2 is requierd</span
+            >
+          </ng-container>
+        </div>
+        <div class="mb-3 w-50">
+          <label class="form-label text-secondary">Choice 3</label>
+          <input
+            class="form-control"
+            type="text"
+            name="Choice3"
+            placeholder="Please enter Choice 3"
+            formControlName="choice3"
+          />
+          <ng-container *ngIf="getChoice3.touched">
+            <span *ngIf="getChoice3.hasError('required')" class="text-danger"
+              >Choice 3 is requierd</span
+            >
+          </ng-container>
+        </div>
+        <div class="mb-3 w-50">
+          <label class="form-label text-secondary">Choice 4</label>
+          <input
+            class="form-control"
+            type="text"
+            name="Choice4"
+            placeholder="Please enter Choice 4"
+            formControlName="choice4"
+          />
+          <ng-container *ngIf="getChoice4.touched">
+            <span *ngIf="getChoice4.hasError('required')" class="text-danger"
+              >Choice4 is requierd</span
+            >
+          </ng-container>
+        </div>
+        <div class="mb-3 w-50">
+          <label class="form-label text-secondary">Answer</label>
+          <select class="form-control" name="Answer" formControlName="answer">
+            <option [value]="getChoice1.value">{{ getChoice1.value }}</option>
+            <option [value]="getChoice2.value">{{ getChoice2.value }}</option>
+            <option [value]="getChoice3.value">{{ getChoice3.value }}</option>
+            <option [value]="getChoice4.value">{{ getChoice4.value }}</option>
+          </select>
+
+          <ng-container *ngIf="getAnswer.touched">
+            <span *ngIf="getChoice4.hasError('required')" class="text-danger"
+              >Choice4 is requierd</span
+            >
+          </ng-container>
+        </div>
+
+        <div class="mb-6">
+          <input type="submit" value="Save" class="btn btn-outline-dark" />
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-6"></div>
+  </div>
+  <hr />
+  <br />
+  <hr />
+  <div class="row">
+    <section class="intro">
+      <div class="gradient-custom-1 h-100">
+        <div class="mask d-flex align-items-center h-100">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <div class="table-responsive bg-white">
+                  <table class="table mb-0">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Choice 1</th>
+                        <th scope="col">Choice 2</th>
+                        <th scope="col">Choice 3</th>
+                        <th scope="col">Choice 4</th>
+                        <th scope="col">Corect Ans</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let quest of quests">
+                        <th scope="row" style="color: #666666">
+                          {{ quest.id }}
+                        </th>
+                        <th scope="row" style="color: #666666">
+                          {{ quest.title }}
+                        </th>
+                        <td>{{ quest.choice3 }}</td>
+                        <td>{{ quest.choice2 }}</td>
+                        <td>{{ quest.choice3 }}</td>
+                        <td>{{ quest.choice4 }}</td>
+                        <td
+                          style="background-color: aquamarine"
+                          class="text-center"
+                        >
+                          {{ quest.answer }}
+                        </td>
+                        <td>
+                          <button
+                            mat-icon-button
+                            color="warn"
+                            class="btn btn-danger"
+                            (click)="confirmDelete(quest.id)"
+                          >
+                            Delete
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

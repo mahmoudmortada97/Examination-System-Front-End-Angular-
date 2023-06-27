@@ -13,12 +13,17 @@ import { SubjectsComponent } from './Components/subjects/subjects.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ExamsComponent } from './Components/exams/exams.component';
 import { TakeExamsComponent } from './Components/take-exams/take-exams.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowExamsComponent } from './Components/show-exams/show-exams.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './Components/register/register.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ShowGradeComponent } from './Components/show-grade/show-grade.component';
+import { NewExamComponent } from './Components/exams/new-exam/new-exam.component';
+import { NewQuestionComponent } from './Components/exams/new-question/new-question.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ShowQuestionsComponent } from './Components/exams/show-questions/show-questions.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +42,19 @@ import { ShowGradeComponent } from './Components/show-grade/show-grade.component
     RegisterComponent,
     NotFoundComponent,
     ShowGradeComponent,
+    NewExamComponent,
+    NewQuestionComponent,
+    ShowQuestionsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

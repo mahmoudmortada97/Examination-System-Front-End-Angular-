@@ -34,7 +34,6 @@ export class TakeExamsComponent implements OnInit {
     this.examService.getExamById(this.ExamId).subscribe({
       next: (data) => {
         this.Exams = data;
-        console.log(this.Exams[0]);
         this.currentQuestion = this.Exams[0];
       },
     });
@@ -83,20 +82,14 @@ export class TakeExamsComponent implements OnInit {
     } else {
       this.Error = true;
     }
-
-    console.log(this.grade);
   }
 
   postExam() {
     this.examService
       .PostStudentGradeInExam(this.ExamId, this.StudentID, this.grade)
       .subscribe({
-        next: (data) => {
-          console.log(data);
-        },
-        error: (error) => {
-          console.log(error);
-        },
+        next: (data) => {},
+        error: (error) => {},
         complete: () => {
           this._router.navigate(['/showgrade', this.StudentID, this.ExamId]);
         },
@@ -107,12 +100,8 @@ export class TakeExamsComponent implements OnInit {
     this.examService
       .PutStudentGradeInExam(this.ExamId, this.StudentID, this.grade)
       .subscribe({
-        next: (data) => {
-          console.log(data);
-        },
-        error: (error) => {
-          console.log(error);
-        },
+        next: (data) => {},
+        error: (error) => {},
         complete: () => {
           this._router.navigate(['/showgrade', this.StudentID, this.ExamId]);
         },

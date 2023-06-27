@@ -38,4 +38,16 @@ export class ExamService {
       `${this.baseUrl}grade/students/${studentId}/exams/${examId}`
     );
   }
+
+  addExam(exam: any) {
+    return this.httpClient.post(`${this.baseUrl}Exam`, exam);
+  }
+
+  addQuest(quest: any) {
+    return this.httpClient.post(`${this.baseUrl}Question`, quest);
+  }
+
+  deleteQuestion(id: number) {
+    return this.httpClient.delete(`${this.baseUrl}Question?Id=${id}`);
+  }
 }

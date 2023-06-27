@@ -10,6 +10,9 @@ import { ShowExamsComponent } from './Components/show-exams/show-exams.component
 import { RegisterComponent } from './Components/register/register.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ShowGradeComponent } from './Components/show-grade/show-grade.component';
+import { NewExamComponent } from './Components/exams/new-exam/new-exam.component';
+import { NewQuestionComponent } from './Components/exams/new-question/new-question.component';
+import { ShowQuestionsComponent } from './Components/exams/show-questions/show-questions.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,9 +23,25 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent, title: 'Exam | Register' },
   { path: 'exams', component: ExamsComponent, title: 'Exam | Exams' },
   {
+    path: 'newexam',
+    component: NewExamComponent,
+    title: 'Exam | Add new exam',
+  },
+  {
+    path: 'newquestion/:id',
+    component: NewQuestionComponent,
+    title: 'Exam | Add new quest',
+  },
+
+  {
     path: 'takeexams/:id',
     component: TakeExamsComponent,
     title: 'Exam | Take Exam',
+  },
+  {
+    path: 'showquestions/:id',
+    component: ShowQuestionsComponent,
+    title: 'Exam | Show Exam Questions',
   },
   {
     path: 'showexams',

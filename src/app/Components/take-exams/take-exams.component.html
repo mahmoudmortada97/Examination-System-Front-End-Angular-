@@ -14,7 +14,7 @@
 
     <div class="question-section my-5">
       <div class="d-flex justify-content-between">
-        <h3 class="question fs-1">{{ currentQuestion.title }}</h3>
+        <h3 class="question fs-3">{{ currentQuestion.title }}</h3>
         <button class="btn btn-success">
           {{ currentIndex + 1 }} OF {{ Exams.length }} Questions
         </button>
@@ -22,6 +22,7 @@
       <div class="d-flex align-items-center">
         <input
           type="radio"
+          class="my-3"
           [value]="currentQuestion.choice1"
           id="choice_{{ currentQuestion.choice1 }}"
           name="choice"
@@ -37,6 +38,7 @@
       <div class="d-flex align-items-center">
         <input
           type="radio"
+          class="my-3"
           [value]="currentQuestion.choice2"
           id="choice_{{ currentQuestion.choice2 }}"
           name="choice"
@@ -53,6 +55,7 @@
       <div class="d-flex align-items-center">
         <input
           type="radio"
+          class="my-3"
           [value]="currentQuestion.choice3"
           id="choice_{{ currentQuestion.choice3 }}"
           name="choice"
@@ -69,6 +72,7 @@
       <div class="d-flex align-items-center">
         <input
           type="radio"
+          class="my-3"
           [value]="currentQuestion.choice4"
           id="choice_{{ currentQuestion.choice4 }}"
           name="choice"
@@ -110,7 +114,10 @@
         </button>
       </ng-container>
     </div>
-    <p *ngIf="Error == true" class="alert alert-danger w-25 text-center">
+    <p
+      *ngIf="Error == true"
+      class="alert alert-danger w-50 mx-auto text-center"
+    >
       Please Choose Answer
     </p>
   </div>

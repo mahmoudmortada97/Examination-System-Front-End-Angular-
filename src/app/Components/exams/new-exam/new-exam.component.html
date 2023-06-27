@@ -1,0 +1,71 @@
+<div class="container p-5 mb-5">
+  <button [routerLink]="'/exams'" class="btn btn-danger me-5 mb-2">Back</button>
+
+  <div class="mb-5"></div>
+  <div class="row fs-5 text-black text-center">
+    <h1>Create new Exam</h1>
+    <h4 class="text-secondary my-3">Please fill all data</h4>
+
+    <div class="col-lg-12">
+      <form [formGroup]="examForm" (submit)="formHandler($event)">
+        <div class="mb-3 p-3 w-50 mx-auto">
+          <label class="form-label text-secondary">Exam name</label>
+          <input
+            class="form-control my-2"
+            type="text"
+            name="Name"
+            placeholder="Please enter exam name"
+            formControlName="name"
+          />
+          <ng-container *ngIf="getName.touched">
+            <span *ngIf="getName.hasError('required')" class="text-danger"
+              >Exam name is requierd</span
+            >
+            <span *ngIf="getName.hasError('minlength')" class="text-danger"
+              >Exam name must be more than 4 characters</span
+            >
+          </ng-container>
+        </div>
+
+        <div class="mb-3 w-50 mx-auto">
+          <label class="form-label text-secondary">Exam Image</label>
+          <input
+            class="form-control my-2"
+            type="text"
+            name="Image"
+            placeholder="Please enter exam image"
+            formControlName="image"
+          />
+          <ng-container *ngIf="getImage.touched"> </ng-container>
+        </div>
+
+        <div class="mb-3 w-50 mx-auto">
+          <label class="form-label text-secondary">Exam Description</label>
+          <input
+            class="form-control my-2"
+            type="text"
+            name="Description"
+            placeholder="Please enter exam description"
+            formControlName="description"
+          />
+          <ng-container *ngIf="getDescription.touched">
+            <span
+              *ngIf="getDescription.hasError('required')"
+              class="text-danger"
+              >Exam Description is requierd</span
+            >
+            <span
+              *ngIf="getDescription.hasError('minlength')"
+              class="text-danger"
+              >Exam Description must be more than 4 characters</span
+            >
+          </ng-container>
+        </div>
+
+        <div class="mb-6">
+          <input type="submit" value="Save" class="btn btn-outline-success" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="container my-4">
+  <a class="btn btn-dark mt-5" [routerLink]="['/newexam']">Add Exam</a>
+  <div class="row">
+    <section class="intro">
+      <div class="gradient-custom-1 h-100">
+        <div class="mask d-flex align-items-center h-100">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <div class="table-responsive bg-white">
+                  <table class="table mb-0 text-center">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Show Questions</th>
+                        <th scope="col">Add Question</th>
+                        <th scope="col">Delete Exam</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let exam of exams">
+                        <th scope="row" style="color: #666666">
+                          {{ exam.id }}
+                        </th>
+                        <th class="fs-6" scope="row" style="color: #666666">
+                          {{ exam.name }}
+                        </th>
+                        <td class="truncate-text">{{ exam.description }}</td>
+                        <td>
+                          <img
+                            src="./assets/Images/{{ exam.image }}"
+                            class="w-50"
+                            alt=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            class="btn btn-outline-warning"
+                            [routerLink]="['/showquestions', exam.id]"
+                            >Show Questions</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="btn btn-outline-success"
+                            [routerLink]="['/newquestion', exam.id]"
+                            >Add Questions</a
+                          >
+                        </td>
+                        <td>
+                          <a class="btn btn-danger" (click)="Remove(exam.id)"
+                            >Delete Exam</a
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
