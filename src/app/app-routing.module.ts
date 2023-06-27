@@ -9,6 +9,7 @@ import { TakeExamsComponent } from './Components/take-exams/take-exams.component
 import { ShowExamsComponent } from './Components/show-exams/show-exams.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { ShowGradeComponent } from './Components/show-grade/show-grade.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,6 +28,11 @@ const routes: Routes = [
     path: 'showexams',
     component: ShowExamsComponent,
     title: 'Exam | Show Exams',
+  },
+  {
+    path: 'showgrade/:studentId/:examId',
+    component: ShowGradeComponent,
+    title: 'Exam | Show Grade',
   },
   {
     path: '**',

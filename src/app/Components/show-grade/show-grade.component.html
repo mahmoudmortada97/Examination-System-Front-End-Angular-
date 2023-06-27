@@ -1,0 +1,24 @@
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="">
+    <button id="grade" class="p-5 display-5">
+      Your Grade is {{ studentGrade.grade! }}
+    </button>
+  </div>
+
+  <div>
+    <a
+      id="another-exam"
+      class="position-absolute btn btn-outline-secondary text-black fs-5"
+      [routerLink]="'/showexams'"
+    >
+      Take Another Exam
+    </a>
+  </div>
+</div>
+
+<style>
+  #another-exam {
+    bottom: 25%;
+    right: 5%;
+  }
+</style>

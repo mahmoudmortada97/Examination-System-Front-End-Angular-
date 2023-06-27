@@ -14,6 +14,10 @@ export class TakeExamsComponent implements OnInit {
   currentIndex: number = 0;
   grade: number = 0;
   Error: boolean = false;
+  ExamId: number = 0;
+
+  //!!!! Make It Static For Now
+  StudentID = 1;
 
   Exams: any = [];
   currentQuestion: any = 0;
@@ -24,11 +28,10 @@ export class TakeExamsComponent implements OnInit {
     private examService: ExamService
   ) {}
   ngOnInit(): void {
-    let id = 0;
     this._activatedRoute.params.subscribe((params) => {
-      id = Number(params['id']);
+      this.ExamId = Number(params['id']);
     });
-    this.examService.getExamById(id).subscribe({
+    this.examService.getExamById(this.ExamId).subscribe({
       next: (data) => {
         this.Exams = data;
         console.log(this.Exams[0]);
@@ -58,7 +61,6 @@ export class TakeExamsComponent implements OnInit {
     if (this.currentQuestion.answer == choice) {
       this.grade++;
     }
-    console.log(`Grade: ${this.grade}`);
   }
 
   submitExam(choice: string) {
@@ -67,11 +69,53 @@ export class TakeExamsComponent implements OnInit {
       this.selectedChoice = '';
       this.Error = false;
 
-      this._router.navigate(['/home']);
+      this.examService
+        .getGradeByExamID_StudentID(this.ExamId, this.StudentID)
+        .subscribe({
+          next: (data) => {
+            if (data == null) {
+              this.postExam();
+            } else {
+              this.putExam();
+            }
+          },
+        });
     } else {
       this.Error = true;
     }
 
     console.log(this.grade);
+  }
+
+  postExam() {
+    this.examService
+      .PostStudentGradeInExam(this.ExamId, this.StudentID, this.grade)
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+        },
+        error: (error) => {
+          console.log(error);
+        },
+        complete: () => {
+          this._router.navigate(['/showgrade', this.StudentID, this.ExamId]);
+        },
+      });
+  }
+
+  putExam() {
+    this.examService
+      .PutStudentGradeInExam(this.ExamId, this.StudentID, this.grade)
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+        },
+        error: (error) => {
+          console.log(error);
+        },
+        complete: () => {
+          this._router.navigate(['/showgrade', this.StudentID, this.ExamId]);
+        },
+      });
   }
 }

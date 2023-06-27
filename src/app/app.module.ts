@@ -18,6 +18,7 @@ import { ShowExamsComponent } from './Components/show-exams/show-exams.component
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './Components/register/register.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { ShowGradeComponent } from './Components/show-grade/show-grade.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
     ShowExamsComponent,
     RegisterComponent,
     NotFoundComponent,
+    ShowGradeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

@@ -19,10 +19,11 @@
               <p class="card-text">
                 {{ exam.description }}
               </p>
-              <p class="card-text alert alert-danger fs-5 text-center">
-                <small class="text-body-secondary">Grade</small>
-              </p>
-              <a class="btn btn-success" [routerLink]="['/takeexams', exam.id]">
+
+              <a
+                class="btn btn-success d-block mx-auto"
+                [routerLink]="['/takeexams', exam.id]"
+              >
                 Take Exam
               </a>
             </div>
