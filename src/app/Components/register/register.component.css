@@ -4,7 +4,7 @@ body {
 }
 
 p {
-  color: #b3b3b3;
+  color: #1f1616;
   font-weight: 300;
 }
 
@@ -97,7 +97,7 @@ a:hover {
   font-size: 12px;
   display: block;
   margin-bottom: 0;
-  color: #b3b3b3;
+  color: #2c2222;
 }
 .half .contents .form-group.field--not-empty label,
 .half .bg .form-group.field--not-empty label {
@@ -125,7 +125,7 @@ a:hover {
 }
 
 .half a {
-  color: #888;
+  color: #1b1414;
   text-decoration: underline;
 }
 
@@ -183,7 +183,7 @@ a:hover {
 .control .caption {
   position: relative;
   top: 0.2rem;
-  color: #888;
+  color: #1f1515;
 }
 
 .control input {
@@ -239,7 +239,7 @@ a:hover {
 
 .control input:checked ~ .control__indicator:after {
   display: block;
-  color: #fff;
+  color: #130c0c;
 }
 
 .control--checkbox .control__indicator:after {

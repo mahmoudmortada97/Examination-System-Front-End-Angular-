@@ -31,32 +31,13 @@ a {
 a:hover {
   text-decoration: none !important;
 }
-
-.content {
-  padding: 7rem 0;
+.hero {
+  height: 100vh;
 }
-
-.half,
-.half .container > .row {
+.form-half {
   height: 100vh;
 }
 
-@media (max-width: 991.98px) {
-  .half .bg {
-    height: 500px;
-  }
-}
-
-.half .contents,
-.half .bg {
-  width: 50%;
-}
-@media (max-width: 1199.98px) {
-  .half .contents,
-  .half .bg {
-    width: 100%;
-  }
-}
 .half .contents .form-group,
 .half .bg .form-group {
   overflow: hidden;
@@ -92,17 +73,7 @@ a:hover {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
 }
-.half .contents .form-group label,
-.half .bg .form-group label {
-  font-size: 12px;
-  display: block;
-  margin-bottom: 0;
-  color: #b3b3b3;
-}
-.half .contents .form-group.field--not-empty label,
-.half .bg .form-group.field--not-empty label {
-  margin-top: -20px;
-}
+
 .half .contents .form-control,
 .half .bg .form-control {
   border: none;
@@ -139,37 +110,6 @@ a:hover {
   position: relative;
   top: 2px;
   font-size: 14px;
-}
-
-.social-login a {
-  display: block;
-  text-decoration: none;
-  display: block;
-  position: relative;
-  text-align: center;
-  color: #fff;
-  margin-bottom: 10px;
-}
-.social-login a:hover {
-  color: #fff;
-}
-.social-login a.facebook {
-  background: #3b5998;
-}
-.social-login a.facebook:hover {
-  background: #344e86;
-}
-.social-login a.twitter {
-  background: #1da1f2;
-}
-.social-login a.twitter:hover {
-  background: #0d95e8;
-}
-.social-login a.google {
-  background: #ea4335;
-}
-.social-login a.google:hover {
-  background: #e82e1e;
 }
 
 .control {

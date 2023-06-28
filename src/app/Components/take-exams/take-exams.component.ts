@@ -17,7 +17,7 @@ export class TakeExamsComponent implements OnInit {
   ExamId: number = 0;
 
   //!!!! Make It Static For Now
-  StudentID = 1;
+  StudentID = '81b7ccfc-3ffd-4a73-9a57-8f5c87f9c311';
 
   Exams: any = [];
   currentQuestion: any = 0;

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ExamService {
-  baseUrl: string = 'https://localhost:7019/api/';
+  baseUrl: string = 'https://localhost:44391/api/';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -15,14 +15,14 @@ export class ExamService {
     return this.httpClient.get(`${this.baseUrl}Exam/${id}`);
   }
 
-  PostStudentGradeInExam(examId: number, studentId: number, grade: number) {
+  PostStudentGradeInExam(examId: number, studentId: string, grade: number) {
     return this.httpClient.post(`${this.baseUrl}Grade`, {
       examId: examId,
       studentId: studentId,
       grade: grade,
     });
   }
-  PutStudentGradeInExam(examId: number, studentId: number, grade: number) {
+  PutStudentGradeInExam(examId: number, studentId: string, grade: number) {
     return this.httpClient.put(
       `${this.baseUrl}Grade/students/${studentId}/exams/${examId}`,
       {
@@ -33,7 +33,7 @@ export class ExamService {
     );
   }
 
-  getGradeByExamID_StudentID(examId: number, studentId: number) {
+  getGradeByExamID_StudentID(examId: number, studentId: string) {
     return this.httpClient.get(
       `${this.baseUrl}grade/students/${studentId}/exams/${examId}`
     );

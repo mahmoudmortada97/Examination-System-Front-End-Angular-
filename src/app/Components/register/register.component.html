@@ -14,47 +14,217 @@
               achieving your goals
             </p>
           </div>
-          <form action="#" class="row justify-content-center" method="post">
+          <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </div>
+          <form
+            [formGroup]="registerform"
+            (ngSubmit)="submitRegisterForm(registerform)"
+            class="row justify-content-center"
+          >
             <div class="form-group col-md-6 first my-1">
               <label for="firstName">First Name</label>
-              <input type="text" class="form-control" id="firstName" />
+              <input
+                formControlName="firstName"
+                type="text"
+                class="form-control"
+                id="firstName"
+                autocomplete="off"
+              />
+              <div
+                *ngIf="
+                  registerform.get('firstName')?.errors &&
+                  registerform.get('firstName')?.touched
+                "
+              >
+                <div
+                  class="m-0 alert alert-danger"
+                  *ngIf="registerform.get('firstName')?.getError('required')"
+                >
+                  <p>First Name is required</p>
+                </div>
+
+                <div
+                  class="m-0 alert alert-danger"
+                  *ngIf="registerform.get('firstName')?.errors?.['pattern']"
+                >
+                  <p>
+                    Special Characters and Numbers not allowed & not less than 3
+                    characters & not more than 15 characters and start capital
+                    character
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div class="form-group col-md-6 first my-1">
               <label for="lastName">Last Name</label>
-              <input type="text" class="form-control" id="lastName" />
+              <input
+                formControlName="lastName"
+                type="text"
+                class="form-control"
+                id="lastName"
+                autocomplete="off"
+              />
+              <div
+                *ngIf="
+                  registerform.get('lastName')?.errors &&
+                  registerform.get('lastName')?.touched
+                "
+              >
+                <div
+                  class="m-0 alert alert-danger"
+                  *ngIf="registerform.get('lastName')?.getError('required')"
+                >
+                  <p>Last Name is required</p>
+                </div>
+
+                <div
+                  class="m-0 alert alert-danger"
+                  *ngIf="registerform.get('lastName')?.errors?.['pattern']"
+                >
+                  <p>
+                    Special Characters and Numbers not allowed & not less than 3
+                    characters & not more than 15 characters and start capital
+                    character
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div class="form-group col-md-6 first my-1">
               <label for="email">Email</label>
-              <input type="text" class="form-control" id="email" />
+              <input
+                formControlName="email"
+                type="text"
+                class="form-control"
+                id="email"
+                autocomplete="off"
+              />
+              <div
+                *ngIf="
+                  registerform.get('email')?.errors &&
+                  registerform.get('email')?.touched
+                "
+              >
+                <div
+                  class="m-0 alert alert-danger"
+                  *ngIf="registerform.get('email')?.getError('pattern')"
+                >
+                  <p>Enter valid email. *Ex: email@example.com</p>
+                </div>
+
+                <div
+                  class="m-0 p-1 alert alert-danger"
+                  *ngIf="registerform.get('email')?.errors?.['required']"
+                >
+                  <p>Email is required</p>
+                </div>
+              </div>
             </div>
 
             <div class="form-group col-md-6 first my-1">
               <label for="role">Role</label>
-              <select class="form-select" aria-label="Default select example">
+              <select
+                formControlName="role"
+                class="form-select"
+                aria-label="Default select example"
+              >
                 <option selected value="">--Select Role--</option>
                 <option value="instructor">Instructor</option>
                 <option value="student">Student</option>
               </select>
+              <div
+                *ngIf="
+                  registerform.get('role')?.errors &&
+                  registerform.get('role')?.touched
+                "
+              >
+                <div
+                  class="m-0 p-1 alert alert-danger"
+                  *ngIf="registerform.get('role')?.errors?.['required']"
+                >
+                  <p>Role is required</p>
+                </div>
+              </div>
             </div>
 
             <div class="form-group col-md-6 last my-1">
               <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" />
+              <input
+                formControlName="password"
+                type="password"
+                class="form-control"
+                id="password"
+                autocomplete="off"
+              />
+              <div
+                *ngIf="
+                  registerform.get('password')?.errors &&
+                  registerform.get('password')?.touched
+                "
+              >
+                <div
+                  class="m-0 alert alert-danger"
+                  *ngIf="registerform.get('password')?.getError('pattern')"
+                >
+                  <p>
+                    Enter valid password *Minimum 6 characters, at least one
+                    number, one uppercase letter, one lowercase letter, and one
+                    special character*
+                  </p>
+                </div>
+
+                <div
+                  class="m-0 p-1 alert alert-danger"
+                  *ngIf="registerform.get('password')?.errors?.['required']"
+                >
+                  <p>Password is required</p>
+                </div>
+              </div>
             </div>
 
             <div class="form-group col-md-6 last my-1">
-              <label for="repassword">Confirm Password</label>
-              <input type="password" class="form-control" id="repassword" />
+              <label for="confirmPassword">Confirm Password</label>
+              <input
+                autocomplete="off"
+                formControlName="confirmPassword"
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+              />
+              <div
+                *ngIf="
+                  registerform.get('confirmPassword')?.errors &&
+                  registerform.get('confirmPassword')?.touched
+                "
+              >
+                <div
+                  class="m-0 p-1 alert alert-danger"
+                  *ngIf="registerform.get('confirmPassword')?.errors?.['required']"
+                >
+                  <p>Confirm Password is required</p>
+                </div>
+                <div
+                  class="m-0 p-1 alert alert-danger"
+                  *ngIf="
+                  registerform.get('confirmPassword')?.errors?.['rePassMatch']
+                  "
+                >
+                  <p>Repassword must match with Password</p>
+                </div>
+              </div>
             </div>
 
             <div class="col-md-2">
-              <input
+              <button
                 type="submit"
                 value="Register"
-                class="btn btn-block btn-primary my-3"
-              />
+                class="btn btn-block btn-primary my-4"
+              >
+                <span *ngIf="!isLoading">Register</span>
+                <i *ngIf="isLoading" class="fas fa-spinner fa-spin"></i>
+              </button>
             </div>
           </form>
         </div>

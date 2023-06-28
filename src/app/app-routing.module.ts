@@ -13,6 +13,9 @@ import { ShowGradeComponent } from './Components/show-grade/show-grade.component
 import { NewExamComponent } from './Components/exams/new-exam/new-exam.component';
 import { NewQuestionComponent } from './Components/exams/new-question/new-question.component';
 import { ShowQuestionsComponent } from './Components/exams/show-questions/show-questions.component';
+import { AuthGuard } from './Guards/auth.guard';
+import { InstructorGuard } from './Guards/instructor.guard';
+import { StudentGuard } from './Guards/student.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,35 +24,47 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutUsComponent, title: 'Exam | About Us' },
   { path: 'login', component: LoginComponent, title: 'Exam | Login' },
   { path: 'register', component: RegisterComponent, title: 'Exam | Register' },
-  { path: 'exams', component: ExamsComponent, title: 'Exam | Exams' },
+  {
+    path: 'exams',
+    canActivate: [InstructorGuard],
+    component: ExamsComponent,
+    title: 'Exam | Exams',
+  },
   {
     path: 'newexam',
+    canActivate: [InstructorGuard],
     component: NewExamComponent,
     title: 'Exam | Add new exam',
   },
   {
     path: 'newquestion/:id',
+    canActivate: [InstructorGuard],
     component: NewQuestionComponent,
     title: 'Exam | Add new quest',
   },
 
   {
     path: 'takeexams/:id',
+    canActivate: [StudentGuard],
+
     component: TakeExamsComponent,
     title: 'Exam | Take Exam',
   },
   {
     path: 'showquestions/:id',
+    canActivate: [InstructorGuard],
     component: ShowQuestionsComponent,
     title: 'Exam | Show Exam Questions',
   },
   {
     path: 'showexams',
+    canActivate: [StudentGuard],
     component: ShowExamsComponent,
     title: 'Exam | Show Exams',
   },
   {
     path: 'showgrade/:studentId/:examId',
+    canActivate: [StudentGuard],
     component: ShowGradeComponent,
     title: 'Exam | Show Grade',
   },

@@ -1,37 +1,107 @@
-<div class="d-lg-flex half">
-  <div
-    class="bg order-1 order-md-2"
-    style="background-image: url('assets/Images/login.png')"
-  ></div>
-  <div class="contents order-2 order-md-1">
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-7">
-          <div class="mb-4">
-            <h3 class="fs-1">Login</h3>
-            <p class="mb-4 fs-5">
-              Prove Your Skills! <br />Login and take our expert exams to
-              showcase your knowledge.
-            </p>
-          </div>
-          <form action="#" method="post">
-            <div class="form-group first my-3">
-              <label for="username" class="fs-6">Email</label>
-              <input type="text" class="form-control" id="username" />
-            </div>
-            <div class="form-group last my-3">
-              <label for="password" class="fs-6">Password</label>
-              <input type="password" class="form-control" id="password" />
+<div class="container hero">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="container">
+        <div class="row align-items-center justify-content-center form-half">
+          <div class="col-md-9">
+            <div class="mb-4">
+              <h3 class="fs-1">Login</h3>
+              <p class="mb-4 fs-5">
+                Prove Your Skills! <br />Login and take our expert exams to
+                showcase your knowledge.
+              </p>
             </div>
 
-            <input
-              type="submit"
-              value="Log In"
-              class="btn btn-block btn-primary my-3"
-            />
-          </form>
+            <form
+              (ngSubmit)="submitlogInForm(logInform)"
+              [formGroup]="logInform"
+            >
+              <div class="form-group first my-3">
+                <input
+                  formControlName="email"
+                  type="text"
+                  class="form-control fs-6"
+                  id="username"
+                  placeholder="Email"
+                />
+
+                <div
+                  *ngIf="
+                    logInform.get('email')?.errors &&
+                    logInform.get('email')?.touched
+                  "
+                >
+                  <div
+                    class="my-2 alert alert-danger"
+                    *ngIf="logInform.get('email')?.getError('pattern')"
+                  >
+                    <p>Enter valid email. *Ex: email@example.com</p>
+                  </div>
+
+                  <div
+                    class="my-2 p-1 alert alert-danger"
+                    *ngIf="logInform.get('email')?.errors?.['required']"
+                  >
+                    <p>Email is required</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group last my-3">
+                <input
+                  formControlName="password"
+                  type="password"
+                  class="form-control fs-6"
+                  id="password"
+                  placeholder="Password"
+                />
+
+                <div
+                  *ngIf="
+                    logInform.get('password')?.errors &&
+                    logInform.get('password')?.touched
+                  "
+                >
+                  <div
+                    class="my-2 alert alert-danger"
+                    *ngIf="logInform.get('password')?.getError('pattern')"
+                  >
+                    <p>
+                      Enter valid password *Minimum 6 characters, at least one
+                      number, one uppercase letter, one lowercase letter, and
+                      one special character*
+                    </p>
+                  </div>
+
+                  <div
+                    class="my-2 p-1 alert alert-danger"
+                    *ngIf="logInform.get('password')?.errors?.['required']"
+                  >
+                    <p>Password is required</p>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                [disabled]="logInform.invalid"
+                type="submit"
+                class="btn btn-block btn-primary my-3"
+              >
+                <span *ngIf="!isLoading">Login</span>
+                <i *ngIf="isLoading" class="fas fa-spinner fa-spin"></i>
+              </button>
+
+              <div *ngIf="errorMessage" class="alert alert-danger">
+                Wrong Email or Password
+              </div>
+            </form>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="col-md-6">
+      <img src="assets/Images/login.png" class="img-fluid" alt="" />
     </div>
   </div>
 </div>

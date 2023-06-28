@@ -35,23 +35,50 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/showexams'" role="button"
+          <a
+            *ngIf="isLogin && !isStudent"
+            class="nav-link"
+            [routerLink]="'/showexams'"
+            role="button"
             >Show Exams</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/exams'" role="button">Exams</a>
+          <a
+            *ngIf="isLogin && isStudent"
+            class="nav-link"
+            [routerLink]="'/exams'"
+            role="button"
+            >Exams</a
+          >
         </li>
       </ul>
       <ul class="ms-auto navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" role="button">Username</a>
+          <a *ngIf="isLogin" class="nav-link" role="button">{{ userName }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/login'" role="button">Login</a>
+          <a
+            *ngIf="!isLogin"
+            class="nav-link"
+            [routerLink]="'/login'"
+            role="button"
+            >Login</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" role="button">Logout</a>
+          <a
+            *ngIf="!isLogin"
+            class="nav-link"
+            [routerLink]="'/register'"
+            role="button"
+            >Register</a
+          >
+        </li>
+        <li class="nav-item">
+          <a *ngIf="isLogin" (click)="logOut()" class="nav-link" role="button"
+            >Logout</a
+          >
         </li>
       </ul>
     </div>

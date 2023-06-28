@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ShowGradeComponent implements OnInit {
   studentGrade: any = 0;
   ExamId: number = 0;
-  StudentId: number = 0;
+  StudentId = '81b7ccfc-3ffd-4a73-9a57-8f5c87f9c311';
 
   constructor(
     private _router: Router,
@@ -20,7 +20,7 @@ export class ShowGradeComponent implements OnInit {
   ngOnInit(): void {
     this._activatedRoute.params.subscribe((params) => {
       this.ExamId = Number(params['examId']);
-      this.StudentId = Number(params['studentId']);
+      this.StudentId = params['studentId'];
 
       this._examService
         .getGradeByExamID_StudentID(this.ExamId, this.StudentId)
