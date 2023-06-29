@@ -31,10 +31,10 @@ const routes: Routes = [
     title: 'Exam | Exams',
   },
   {
-    path: 'newexam',
+    path: 'exam/:id/edit',
     canActivate: [InstructorGuard],
     component: NewExamComponent,
-    title: 'Exam | Add new exam',
+    title: 'Exam |  exam',
   },
   {
     path: 'newquestion/:id',

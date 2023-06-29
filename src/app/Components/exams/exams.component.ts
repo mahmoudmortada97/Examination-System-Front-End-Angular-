@@ -27,5 +27,24 @@ export class ExamsComponent implements OnInit {
   ngOnInit(): void {
     this.getAllExam();
   }
-  Remove(id: number) {}
+  confirmDelete(questId: number) {
+    const confirmed = window.confirm(
+      'Are you sure you want to delete this item?'
+    );
+    if (confirmed) {
+      // Call your API to delete the item
+      this.Remove(questId);
+    }
+  }
+  Remove(id: number) {
+    this.examService.deleteExam(id).subscribe({
+      next: (response) => {
+        console.log(response);
+        this.getAllExam();
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
 }

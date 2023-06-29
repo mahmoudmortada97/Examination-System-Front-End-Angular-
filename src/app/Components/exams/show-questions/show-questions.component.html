@@ -1,25 +1,56 @@
 <div class="container my-4">
   <button [routerLink]="'/exams'" class="btn btn-danger">Back</button>
+  <a
+    class="btn btn-outline-success mx-1"
+    [routerLink]="['/newquestion', examId]"
+    >Add Questions</a
+  >
+
   <div
     *ngFor="let question of questions; index as index"
     class="card text-center my-3 fs-6"
   >
     <div class="card-header fs-4 bg-warning">Question No {{ index + 1 }}</div>
-    <div class="card-body">
+    <div class="card-body mb-3">
       <h5 class="card-title fs-3 mb-4">{{ question.title }}</h5>
-      <p class="card-text my-2">
-        {{ question.choice1 }}
-      </p>
-      <p class="card-text my-2">
-        {{ question.choice2 }}
-      </p>
-      <p class="card-text my-2">
-        {{ question.choice3 }}
-      </p>
-      <p class="card-text my-2">
-        {{ question.choice4 }}
-      </p>
-      <a class="btn btn-success px-3">{{ question.answer }}</a>
+      <div class="text-center d-lg-flex text-white">
+        <div
+          class="{{
+            question.choice1 == question.answer
+              ? 'p-2 w-25 bg-success mx-1'
+              : 'p-2 w-25 bg-primary mx-1'
+          }}"
+        >
+          {{ question.choice1 }}
+        </div>
+        <div
+          class="{{
+            question.choice2 == question.answer
+              ? 'p-2 w-25 bg-success mx-1'
+              : 'p-2 w-25 bg-primary mx-1'
+          }}"
+        >
+          {{ question.choice2 }}
+        </div>
+        <div
+          class="{{
+            question.choice3 == question.answer
+              ? 'p-2 w-25 bg-success mx-1'
+              : 'p-2 w-25 bg-primary mx-1'
+          }}"
+        >
+          {{ question.choice3 }}
+        </div>
+        <div
+          class="{{
+            question.choice4 == question.answer
+              ? 'p-2 w-25 bg-success mx-1'
+              : 'p-2 w-25 bg-primary mx-1'
+          }}"
+        >
+          {{ question.choice4 }}
+        </div>
+      </div>
     </div>
   </div>
 </div>

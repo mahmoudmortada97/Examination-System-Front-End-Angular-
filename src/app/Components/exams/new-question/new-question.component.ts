@@ -69,14 +69,22 @@ export class NewQuestionComponent implements OnInit {
 
       this.examService.addQuest(this.qustForm.value).subscribe({
         next: (response) => {
-          console.log(response);
-          this.quests.qustForms.push(this.qustForm.value);
-          console.log(this.quests);
+          this.UpdateList();
         },
       });
+      this.UpdateList();
     }
 
     this.qustForm.reset();
+  }
+
+  UpdateList() {
+    this.examService.getExamById(this.examId).subscribe({
+      next: (response) => {
+        this.quests = response;
+        console.log(this.quests);
+      },
+    });
   }
 
   confirmDelete(questId: number) {
@@ -91,7 +99,9 @@ export class NewQuestionComponent implements OnInit {
 
   deleteItem(questId: number) {
     this.examService.deleteQuestion(questId).subscribe({
-      next: (response) => {},
+      next: (response) => {
+        this.UpdateList();
+      },
     });
   }
 }

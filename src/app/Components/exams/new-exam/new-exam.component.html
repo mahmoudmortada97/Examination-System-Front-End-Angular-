@@ -3,7 +3,7 @@
 
   <div class="mb-5"></div>
   <div class="row fs-5 text-black text-center">
-    <h1>Create new Exam</h1>
+    <h1>{{ examId == 0 ? "Create new Exam" : "Edit Exam" }}</h1>
     <h4 class="text-secondary my-3">Please fill all data</h4>
 
     <div class="col-lg-12">
@@ -57,13 +57,17 @@
             <span
               *ngIf="getDescription.hasError('minlength')"
               class="text-danger"
-              >Exam Description must be more than 4 characters</span
+              >Exam Description must be more than 10 characters</span
             >
           </ng-container>
         </div>
 
         <div class="mb-6">
-          <input type="submit" value="Save" class="btn btn-outline-success" />
+          <input
+            type="submit"
+            value="{{ examId == 0 ? 'Save' : 'Edit' }}"
+            class="btn btn-outline-success"
+          />
         </div>
       </form>
     </div>

@@ -32,6 +32,15 @@ export class ExamService {
       }
     );
   }
+  getExamOnlyById(id: any) {
+    return this.httpClient.get(`${this.baseUrl}Exam/getexam/${id}`);
+  }
+  editExam(id: any, exam: any) {
+    return this.httpClient.put(`${this.baseUrl}Exam/${id}`, exam);
+  }
+  deleteExam(id: any) {
+    return this.httpClient.delete(`${this.baseUrl}Exam/${id}`);
+  }
 
   getGradeByExamID_StudentID(examId: number, studentId: string) {
     return this.httpClient.get(
