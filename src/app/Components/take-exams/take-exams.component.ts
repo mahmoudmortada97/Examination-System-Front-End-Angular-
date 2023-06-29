@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/Services/auth.service';
 import { ExamService } from './../../Services/exam.service';
 import { Router } from '@angular/router';
 import { Exam, Question } from './../../Interfaces/exam';
@@ -15,9 +16,10 @@ export class TakeExamsComponent implements OnInit {
   grade: number = 0;
   Error: boolean = false;
   ExamId: number = 0;
+  userName: any;
+  StudentID: any;
 
   //!!!! Make It Static For Now
-  StudentID = '81b7ccfc-3ffd-4a73-9a57-8f5c87f9c311';
 
   Exams: any = [];
   currentQuestion: any = 0;
@@ -25,9 +27,13 @@ export class TakeExamsComponent implements OnInit {
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
-    private examService: ExamService
+    private examService: ExamService,
+    private AuthService: AuthService
   ) {}
   ngOnInit(): void {
+    this.StudentID = this.userName = this.AuthService.userData._value.nameid;
+    console.log(this.StudentID);
+
     this._activatedRoute.params.subscribe((params) => {
       this.ExamId = Number(params['id']);
     });

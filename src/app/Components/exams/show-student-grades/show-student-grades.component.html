@@ -1,0 +1,18 @@
+<div class="container">
+  <table class="table table-responsive text-center">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Student Email</th>
+        <th scope="col">Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let grade of StudentsGrades; index as index">
+        <td>{{ index + 1 }}</td>
+        <td>{{ grade.studentEmail }}</td>
+        <td>{{ grade.grade }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

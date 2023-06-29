@@ -24,6 +24,7 @@ import { NewQuestionComponent } from './Components/exams/new-question/new-questi
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ShowQuestionsComponent } from './Components/exams/show-questions/show-questions.component';
+import { ShowStudentGradesComponent } from './Components/exams/show-student-grades/show-student-grades.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ShowQuestionsComponent } from './Components/exams/show-questions/show-q
     NewExamComponent,
     NewQuestionComponent,
     ShowQuestionsComponent,
+    ShowStudentGradesComponent,
   ],
   imports: [
     BrowserModule,

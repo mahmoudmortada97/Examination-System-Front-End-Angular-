@@ -22,6 +22,11 @@
               </p>
               <div class="text-end">
                 <a
+                  class="btn btn-outline-success mx-1"
+                  [routerLink]="['/showstudentsgrades', exam.id]"
+                  >Show Students Grades</a
+                >
+                <a
                   class="btn btn-outline-warning mx-1"
                   [routerLink]="['/showquestions', exam.id]"
                   >Questions</a

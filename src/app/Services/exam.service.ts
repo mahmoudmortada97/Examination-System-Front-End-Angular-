@@ -59,4 +59,8 @@ export class ExamService {
   deleteQuestion(id: number) {
     return this.httpClient.delete(`${this.baseUrl}Question?Id=${id}`);
   }
+
+  getStudentsGrade(examId: number) {
+    return this.httpClient.get(`${this.baseUrl}Grade/${examId}`);
+  }
 }

@@ -16,6 +16,7 @@ import { ShowQuestionsComponent } from './Components/exams/show-questions/show-q
 import { AuthGuard } from './Guards/auth.guard';
 import { InstructorGuard } from './Guards/instructor.guard';
 import { StudentGuard } from './Guards/student.guard';
+import { ShowStudentGradesComponent } from './Components/exams/show-student-grades/show-student-grades.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -55,6 +56,12 @@ const routes: Routes = [
     canActivate: [InstructorGuard],
     component: ShowQuestionsComponent,
     title: 'Exam | Show Exam Questions',
+  },
+  {
+    path: 'showstudentsgrades/:id',
+    canActivate: [InstructorGuard],
+    component: ShowStudentGradesComponent,
+    title: 'Exam | Show Students Grades',
   },
   {
     path: 'showexams',
