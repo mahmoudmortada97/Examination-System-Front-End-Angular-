@@ -30,8 +30,8 @@
 }
 #footer .row a:hover,
 #footer .tags a:hover {
-  color: var(--rose-color);
-  border-color: var(--rose-color);
+  color: rgb(255, 193, 7);
+  border-color: rgb(255, 193, 7);
 }
 
 #footer .tags a {

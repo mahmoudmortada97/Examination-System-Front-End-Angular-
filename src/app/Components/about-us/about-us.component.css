@@ -3,9 +3,7 @@
   border-radius: 20px;
   padding: 20px;
 }
-i {
-  color: rgb(100, 0, 55);
-}
+
 .circle {
   width: 50px;
   height: 50px;
@@ -14,4 +12,84 @@ i {
   align-items: center;
   border: 2px solid black;
   border-radius: 50%;
+}
+
+/* SERVICES START */
+.section-head h3 {
+  font-weight: 900;
+  font-size: 40px;
+  position: relative;
+  display: inline-block;
+  z-index: 4;
+}
+.section-head h3:after {
+  content: "";
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  z-index: -1;
+}
+.service-box {
+  background-color: #fff;
+  padding: 2.5rem 1.3rem;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  box-shadow: 0px 10px 30px -8px rgb(0 0 0 / 10%);
+  cursor: pointer;
+}
+.service-content h6 {
+  margin-bottom: 15px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.service-box .service-ico {
+  margin-bottom: 1rem;
+  color: #1e1e1e;
+}
+.service-box .ico-circle {
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.ico-circle {
+  color: #1e1e1e;
+  height: 70px;
+  width: 70px;
+  font-size: 2rem;
+  border-radius: 50%;
+  line-height: 1.55;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  background-color: #f4f4f4;
+  transition: all 0.5s ease;
+}
+
+.service-box .s-title {
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 0.4rem 0;
+}
+
+.service-box .s-description {
+  color: #4e4e4e;
+}
+
+.service-box:hover .ico-circle {
+  transition: all 0.5s ease;
+  color: #fff;
+  background-color: #1c1c1c;
 }

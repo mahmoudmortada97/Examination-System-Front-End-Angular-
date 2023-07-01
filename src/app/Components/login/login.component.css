@@ -28,9 +28,14 @@ a {
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
-a:hover {
-  text-decoration: none !important;
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
+a:hover {
+  text-decoration: underline;
+}
+
 .hero {
   height: 100vh;
 }
@@ -197,5 +202,5 @@ a:hover {
 
 .control--checkbox input:disabled:checked ~ .control__indicator {
   background-color: #7e0cf5;
-  opacity: 0.2;
+   opacity: 0.2;
 }

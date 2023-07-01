@@ -23,8 +23,16 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, title: 'Exam | Home' },
   { path: 'contact', component: ContactComponent, title: 'Exam | Contact Us' },
   { path: 'aboutus', component: AboutUsComponent, title: 'Exam | About Us' },
-  { path: 'login', component: LoginComponent, title: 'Exam | Login' },
-  { path: 'register', component: RegisterComponent, title: 'Exam | Register' },
+  {
+    path: 'login',
+    component: LoginComponent,
+    title: 'Exam | Login',
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    title: 'Exam | Register',
+  },
   {
     path: 'exams',
     canActivate: [InstructorGuard],

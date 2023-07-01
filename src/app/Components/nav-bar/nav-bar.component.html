@@ -1,6 +1,12 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-black text-light">
   <div class="container-fluid">
-    <a class="navbar-brand me-5" [routerLink]="'/home'">Exam System </a>
+    <a
+      class="navbar-brand ms-2 me-5 text-warning fw-bold"
+      [routerLink]="'/home'"
+    >
+      <img src="assets/Images/logo.png" class="mb-1" alt="" />
+      EXAM NATION
+    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -16,20 +22,31 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
-            class="nav-link active"
+            class="nav-link"
             role="button"
             [routerLink]="'/home'"
+            [routerLinkActive]="'text-warning'"
             aria-current="page"
             >Home</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" role="button" [routerLink]="'/aboutus'" href="#"
+          <a
+            class="nav-link"
+            role="button"
+            [routerLink]="'/aboutus'"
+            [routerLinkActive]="'text-warning'"
+            href="#"
             >About Us</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" role="button" [routerLink]="'/contact'" href="#"
+          <a
+            class="nav-link"
+            role="button"
+            [routerLink]="'/contact'"
+            [routerLinkActive]="'text-warning'"
+            href="#"
             >Contact Us</a
           >
         </li>
@@ -39,6 +56,7 @@
             *ngIf="isLogin && !isStudent"
             class="nav-link"
             [routerLink]="'/showexams'"
+            [routerLinkActive]="'text-warning'"
             role="button"
             >Show Exams</a
           >
@@ -48,6 +66,7 @@
             *ngIf="isLogin && isStudent"
             class="nav-link"
             [routerLink]="'/exams'"
+            [routerLinkActive]="'text-warning'"
             role="button"
             >Exams</a
           >
@@ -62,6 +81,7 @@
             *ngIf="!isLogin"
             class="nav-link"
             [routerLink]="'/login'"
+            [routerLinkActive]="'text-warning'"
             role="button"
             >Login</a
           >
@@ -71,6 +91,7 @@
             *ngIf="!isLogin"
             class="nav-link"
             [routerLink]="'/register'"
+            [routerLinkActive]="'text-warning'"
             role="button"
             >Register</a
           >
@@ -82,5 +103,6 @@
         </li>
       </ul>
     </div>
+      
   </div>
 </nav>

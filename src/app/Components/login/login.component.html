@@ -82,17 +82,30 @@
                 </div>
               </div>
 
-              <button
-                [disabled]="logInform.invalid"
-                type="submit"
-                class="btn btn-block btn-primary my-3"
-              >
-                <span *ngIf="!isLoading">Login</span>
-                <i *ngIf="isLoading" class="fas fa-spinner fa-spin"></i>
-              </button>
+              <div class="d-flex justify-content-between">
+                <div class="col-md-4">
+                  <button
+                    [disabled]="logInform.invalid"
+                    type="submit"
+                    class="btn btn-block btn-warning text-white my-3"
+                  >
+                    <span *ngIf="!isLoading">Login</span>
+                    <i *ngIf="isLoading" class="fas fa-spinner fa-spin"></i>
+                  </button>
 
-              <div *ngIf="errorMessage" class="alert alert-danger">
-                Wrong Email or Password
+                  <div *ngIf="errorMessage" class="alert alert-danger">
+                    Wrong Email or Password
+                  </div>
+                </div>
+
+                <div class="col-md-8 mt-4">
+                  <p class="ms-5 fs-6">
+                    Don't have account ?
+                    <a [routerLink]="'/register'" class="text-warning"
+                      >Register Now</a
+                    >
+                  </p>
+                </div>
               </div>
             </form>
           </div>
@@ -103,5 +116,6 @@
     <div class="col-md-6">
       <img src="assets/Images/login.png" class="img-fluid" alt="" />
     </div>
+      
   </div>
 </div>

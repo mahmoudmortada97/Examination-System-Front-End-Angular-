@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SubjectsComponent {
   subjects: string[] = [
-    'Math',
+    'Mathematics',
     'Science',
     'Chemistry',
     'Computer',

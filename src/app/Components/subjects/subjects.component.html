@@ -1,16 +1,17 @@
-<div class="subject pb-5">
-  <h1 class="text-center py-5">Our Subjects</h1>
-
-  <div class="container">
-    <div class="row">
-      <div *ngFor="let subject of subjects" class="col-md-3">
-        <div
-          class="d-flex fs-1 justify-content-center align-items-center subject-container bg-black text-white"
-        >
-          {{ subject }}
-        </div>
-        <h4 class="text-center">{{ subject }}</h4>
-      </div>
+<section class="container py-4">
+  <div class="row text-center pt-3">
+    <div class="col-lg-6 m-auto">
+      <h1 class="py-4 fw-bolder fs-900">Our Subjects</h1>
     </div>
   </div>
-</div>
+  <div class="row">
+    <div *ngFor="let subject of subjects" class="col-12 col-md-3 p-2 mt-3">
+      <a href="#"
+        ><img
+          src="assets/Images/{{ subject }}.png"
+          class="rounded-circle img-fluid border"
+      /></a>
+      <h4 class="text-center mt-3 mb-3 fw-bold">{{ subject }}</h4>
+    </div>
+  </div>
+</section>

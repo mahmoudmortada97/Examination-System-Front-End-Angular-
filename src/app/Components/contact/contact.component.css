@@ -52,7 +52,7 @@
 .line-mf {
   width: 40px;
   height: 5px;
-  background-color: #0078ff;
+  background-color: rgb(255, 193, 7);
   margin: 0 auto;
 }
 
@@ -99,9 +99,8 @@
 }
 
 .contact-form button[type="submit"] {
-  background: #0078ff;
+  background-color: rgb(255, 193, 7);
   padding: 10px 24px;
-  color: #fff;
   -webkit-transition: 0.5s all ease;
   -o-transition: 0.5s all ease;
   transition: 0.5s all ease;
